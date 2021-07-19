@@ -1,0 +1,34 @@
+<!--<div>
+
+  <input placeholder="Nouveau Todo" [(ngModel)]="newTodoText"/>
+  <button (click)="addTodo()">Ajouter Tod</button>
+<app-todo *ngFor="let todo of todoList" [toto]="todo"></app-todo>
+</div>
+
+
+<a rooterLink=""user>user</a>
+<br><br>
+<a rooterLink=""admin>admin</a>
+<router-outlet></router-outlet>
+
+<app-login></app-login>
+<button (click)="getNom('Khaled')">click</button>
+<br> <br>
+<input type ="text" (keyup)="getNom('khaled')" placeholder="keyup">
+
+<input type="text" #box1 placeholder="keyup" (keyup)="getNom(box1.value)">
+<input type="text" #box2 placeholder="keydown" (keydown)="getNom(box2.value)">
+<input type="text" #box3 placeholder="blur" (blur)="getNom(box3.value)">
+<h4 (mouseover)="getNom('Mouse In')">Over</h4>
+<h4 (mouseleave)="getNom('Mouse Out')">Leave</h4>!-->
+<h1>Root component</h1>
+<form #loginForm="ngForm" (ngSubmit)="loginUser(loginForm.value)">
+  <input type="email" #name="ngModel" required name ="name" placeholder="Enter Name" ngModel/>
+  <br>
+  <span *ngIf="name.invalid && name.touched" style="color:red"> Invalid email</span>
+  <input type="text" #password="ngModel" minlength="5" name="password" placeholder="Password" ngModel/>
+<br>
+  <span *ngIf="password.invalid && password.touched" style="color:red"> Invalid password</span>
+
+  <button [disabled]="loginForm.invalid">Login</button>
+</form>
